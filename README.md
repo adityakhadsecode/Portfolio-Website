@@ -1,8 +1,6 @@
 # ✦ Aditya Khadse — Portfolio Website
 
-A modern, minimalist portfolio website inspired by [dennissnellenberg.com](https://dennissnellenberg.com/). Built with vanilla HTML, CSS, and JavaScript — no frameworks, no bloat —  just clean code and smooth animations.
-
-![Hero Preview](https://raw.githubusercontent.com/adityakhadsecode/Portfolio-Website/master/its%20me.png)
+A modern, minimalist portfolio website. Built with vanilla HTML, CSS, and JavaScript — no frameworks, no bloat —  just clean code and smooth animations.
 
 ---
 
