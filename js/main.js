@@ -174,14 +174,23 @@
        ============================================ */
     function initHamburgerVisibility() {
         const btn = document.getElementById('btnHamburger');
+        const header = document.getElementById('header');
         if (!btn) return;
 
-        // Show hamburger after scrolling past hero
+        // Show hamburger after scrolling past hero, hide header nav
         ScrollTrigger.create({
             trigger: '.intro',
             start: 'top 80%',
-            onEnter: () => btn.classList.add('visible'),
-            onLeaveBack: () => btn.classList.remove('visible')
+            onEnter: () => {
+                btn.classList.add('visible');
+                if (header) header.style.opacity = '0';
+                if (header) header.style.pointerEvents = 'none';
+            },
+            onLeaveBack: () => {
+                btn.classList.remove('visible');
+                if (header) header.style.opacity = '1';
+                if (header) header.style.pointerEvents = 'auto';
+            }
         });
     }
 
