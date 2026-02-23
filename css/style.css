@@ -62,6 +62,15 @@
   --color-text: #1C1D20;
   --color-text-light: #FFF;
 
+  /* GUIDELINES.md color palette */
+  --color-bg-primary: #cab7a2;
+  --color-bg-secondary: #b4ada3;
+  --color-accent-rose: #c4b1ae;
+  --color-accent-olive: #bfb59e;
+  --color-text-main: #858786;
+  --color-text-emphasis: #1C1D20;
+  --color-border-subtle: rgba(133, 135, 134, 0.2);
+
   --animation-primary: all .5s cubic-bezier(.7, 0, .3, 1);
   --animation-fast: all .3s cubic-bezier(.7, 0, .3, 1);
   --animation-smooth: all .7s cubic-bezier(.7, 0, .3, 1);
@@ -378,58 +387,18 @@ button {
   pointer-events: all;
 }
 
-.hero-location {
-  position: absolute;
-  bottom: clamp(5em, 15vh, 10em);
-  left: 0;
-  z-index: 5;
-  display: flex;
-  align-items: center;
-  gap: 0;
-  color: var(--color-light);
-  background: var(--color-dark);
-  border-radius: 0 100px 100px 0;
-  padding: 0.6em 0.6em 0.6em 1.8em;
-}
-
-.hero-location-text {
-  font-size: 0.8rem;
-  font-weight: 400;
-  line-height: 1.2;
-  margin-right: 0.8em;
-  white-space: nowrap;
-}
-
-.hero-location-globe {
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  background: rgba(153, 157, 158, 0.4);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
-.hero-location-globe svg {
-  width: 22px;
-  height: 22px;
-  fill: none;
-  stroke: var(--color-light);
-  stroke-width: 1.5;
-}
-
 .hero-info {
   position: absolute;
-  bottom: clamp(5em, 15vh, 10em);
+  top: 50%;
   right: var(--container-padding);
+  transform: translateY(-50%);
   z-index: 5;
   color: var(--color-light);
   text-align: left;
 }
 
 .hero-scroll-indicator {
-  margin-bottom: 8em;
+  margin-bottom: 2em;
   opacity: 0.6;
 }
 
@@ -483,7 +452,7 @@ button {
 .intro {
   position: relative;
   background: var(--color-light);
-  color: var(--color-text);
+  color: var(--color-text-emphasis);
   padding: var(--section-padding) var(--container-padding);
 }
 
@@ -950,12 +919,9 @@ button {
     font-size: clamp(3rem, 12vw, 6rem);
   }
 
-  .hero-location {
-    bottom: 6em;
-  }
-
   .hero-info {
-    bottom: 6em;
+    top: 50%;
+    transform: translateY(-50%);
   }
 
   .intro-statement {

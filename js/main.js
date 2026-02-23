@@ -56,12 +56,6 @@
             duration: 1.2,
             ease: 'power3.out'
         })
-            .from('.hero-location', {
-                x: -30,
-                opacity: 0,
-                duration: 0.8,
-                ease: 'power3.out'
-            }, '-=0.6')
             .from('.hero-info', {
                 x: 30,
                 opacity: 0,
@@ -84,7 +78,7 @@
 
     /* ============================================
        MARQUEE ANIMATION
-       Continuous horizontal scroll of name
+       Continuous horizontal scroll of name (right to left)
        ============================================ */
     function initMarquee() {
         const marquee = document.getElementById('marquee');
@@ -104,14 +98,18 @@
             singleSetWidth += spans[i].offsetWidth;
         }
 
-        // GSAP infinite scroll
+        // Scroll right-to-left: start offset right, animate leftward
+        gsap.set(marquee, { x: 0 });
         gsap.to(marquee, {
             x: -singleSetWidth,
             duration: 20,
             ease: 'linear',
             repeat: -1,
             modifiers: {
-                x: gsap.utils.unitize(x => parseFloat(x) % singleSetWidth)
+                x: gsap.utils.unitize(x => {
+                    const mod = parseFloat(x) % singleSetWidth;
+                    return mod > 0 ? mod - singleSetWidth : mod;
+                })
             }
         });
 
